@@ -92,6 +92,15 @@ struct ProductDetailVC: View {
 
                 }
                 
+                // Rating
+                if let rating = product.rating {
+                    Text("Rating: \(String(format: "%.f",rating))")
+                        .padding(.leading, 10)
+                        .font(.system(size:15))
+                        .fontWeight(.bold)
+                        .foregroundStyle(.white)
+                }
+                
                 Spacer()
             }
         }

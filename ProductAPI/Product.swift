@@ -8,13 +8,17 @@
 import Foundation
 
 // MARK: - Product
-struct Product: Codable {
+struct Product: Codable,Equatable {
+    static func == (lhs: Product, rhs: Product) -> Bool {
+        return true
+    }
+    
     let products: [ProductElement]
     let total, skip, limit: Int?
 }
 
 // MARK: - ProductElement
-struct ProductElement: Identifiable, Codable {
+struct ProductElement: Identifiable, Codable, Equatable {
     let id:Int
     let title:String?
     let description:String?
